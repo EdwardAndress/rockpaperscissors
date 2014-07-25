@@ -1,10 +1,25 @@
 RESULTS:
+....
+
 <% if @game.winner == "Draw" %>
  <h1> it was a draw </h1>
+ <%= session[:player].draws += 1 %>
  <% elsif @game.winner.name == "computer" %>
- <h1> You lost, the compute won with <%= @game.winner.pick %></h1>
+ <h1> You lost, the RockPaperScissors-bot won with <%= @game.winner.pick %></h1>
+ <% session[:player].losses += 1 %>
 <% else %>
 <h1> You won, with <%= @game.winner.pick %> </h1>
+<% session[:player].wins += 1 %>
+
 <%end%>
+
+So far you have <%= session[:player].wins %> wins, <%= session[:player].draws %> draws and <%= session[:player].losses %> losses.
+
+<p> Would you like to play again <%=session[:player].name%>? </p>
+
+<form action="/play_again" method="GET">
+<button>Yes!</button>
+</form>
+
 
 

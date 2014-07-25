@@ -7,21 +7,32 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  use Rack::Session::Cookie,  :key => 'rack.session',
+                              :path => '/',
+                              :secret => 'your_secret'
+
   get '/new-game' do
   	erb :new_player
   end
 
   post '/register' do 
-  	@player = params[:name]
-  	erb :play	
+  	session[:player] = Player.new(params[:name].downcase.capitalize!)
+    if !params[:name].empty?
+  	 erb :play
+    else
+      erb :new_player
+    end
   end
 
   post "/play" do
-  	player = Player.new(params[:name])
-  	player.picks = params[:pick]
+  	session[:player].picks = params[:pick]
   	computer = generate_computer
-  	@game = Game.new(player, computer)
+  	@game = Game.new(session[:player], computer)
   	erb :outcome
+  end
+
+  get "/play_again" do
+    erb :play
   end
 
   def generate_computer
