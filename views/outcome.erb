@@ -18,14 +18,19 @@ RESULTS:
 <h3>So far you have <%= session[:player].wins %> wins, <%= session[:player].draws %> draws and <%= session[:player].losses %> losses.</h3>
 
 <p>
-
-Your picks during this session:
-
-<%= session[:player].history.each {|choice| puts choice} %>
-
+Your picks during this session...
+</p>
+<p>
+Rock:	<%= session[:player].history.count("Rock") %>
+</p>
+<p>
+Paper:	<%= session[:player].history.count("Paper") %>
+</p>
+<p>
+Scissors: <%= session[:player].history.count("Scissors") %>
 </p>
 
-<h2> Would you like to play again <%=session[:player].name%>? </h2>
+<h2> Would you like to play again, <%=session[:player].name%>? </h2>
 
 <form action="/play_again" method="GET">
 <button>Yes!</button>
