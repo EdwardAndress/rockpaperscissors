@@ -8,6 +8,7 @@ class Player
 	attr_accessor :wins
 	attr_accessor :losses
 	attr_accessor :draws
+	attr_accessor :history
 
 	def wins
 		@wins ||= 0
@@ -19,6 +20,10 @@ class Player
 
 	def draws
 		@draws ||= 0
+	end
+
+	def history
+		@history ||= []
 	end
 
 	def pick

@@ -28,6 +28,7 @@ class RockPaperScissors < Sinatra::Base
   	session[:player].picks = params[:pick]
   	computer = generate_computer
   	@game = Game.new(session[:player], computer)
+    session[:player].history << params[:pick]
   	erb :outcome
   end
 
