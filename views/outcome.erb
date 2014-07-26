@@ -1,8 +1,8 @@
-RESULTS:
-....
+
+<main class=index>
 
 <% if @game.winner == "Draw" %>
- <h1> it was a draw </h1>
+ <h1> It was a draw! </h1>
  <% session[:player].draws += 1 %>
  <% elsif @game.winner.name == "computer" %>
  <h1> You lost!</h1> 
@@ -30,7 +30,7 @@ Paper:	<%= session[:player].history.count("Paper") %>
 Scissors: <%= session[:player].history.count("Scissors") %>
 </p>
 
-<h2> Would you like to play again, <%=session[:player].name%>? </h2>
+<h2> Would you like to play <em>again</em>, <%=session[:player].name%>? </h2>
 
 <form action="/play_again" method="GET">
 <button>Yes!</button>
@@ -39,6 +39,4 @@ Scissors: <%= session[:player].history.count("Scissors") %>
 <form action="/" method="GET">
 <button>No!</button>
 </form>
-
-
-
+</main>

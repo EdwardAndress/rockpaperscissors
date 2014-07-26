@@ -1,14 +1,38 @@
 body {
 	text-align: center;
+	background-image: url(../img/rockpaperscissors.jpg); background-repeat: no-repeat; background-position: center top;
 	}
 
 
 h1{
-font-family:Helvetica;
+font-family:Helvetica; color: 008563; text-shadow: 2px 2px 1F4C2E;
 }
 
 
 
-button{
-	
+button {
+    background: 47B26B;
+    position: relative;
+    -webkit-animation: myfirst 10s; /* Chrome, Safari, Opera */
+    animation: myfirst 10s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
 }
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    0%   {background:47B26B; left:0px; top:0px;}
+    10%  {background:33CCFF; left:200px; top:10px;}
+    20%  {background:33CCFF; left:400px; top:0px;}
+    30%  {background:E65C5C; left:300px; top:400px;}
+    40%  {background:E65C5C; left:200px; top:800px;}
+    50%  {background:E6E65C; left:0px; top:700px;}
+    60%  {background:E6E65C; left:-400px; top:800px;}
+    70%	 {background:9933FF; left:-420px; top:400px;}
+    80%	 {background:9933FF; left:-400px; top:0px;}
+    90% {background:47B26B; left:-200px; top:-10px;}
+    100% {background:47B26B; left:0px; top:0px;}
+}
+
+
+.outcome {text-align: center; margin: 100px auto;}
