@@ -2,10 +2,6 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 
-configure :production do
-  require 'newrelic_rpm'
-end
-
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
