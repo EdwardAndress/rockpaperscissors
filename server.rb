@@ -2,6 +2,11 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
+
 class RockPaperScissors < Sinatra::Base
   get '/' do
     erb :index
@@ -10,6 +15,10 @@ class RockPaperScissors < Sinatra::Base
   use Rack::Session::Cookie,  :key => 'rack.session',
                               :path => '/',
                               :secret => 'your_secret'
+
+configure :production do
+  require 'newrelic_rpm'
+end
 
   get '/new-game' do
   	erb :new_player
