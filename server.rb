@@ -55,4 +55,5 @@ end
   run! if app_file == $0
 end
 
-# http://shielded-fjord-1065.herokuapp.com/
+#production: http://shielded-fjord-1065.herokuapp.com/
+#staging: http://glacial-dusk-4227.herokuapp.com
