@@ -1,6 +1,8 @@
 body {
 	text-align: center;
-	background-image: url(../img/rockpaperscissors.jpg); background-repeat: no-repeat; background-position: center top;
+	background-image: url(../img/rockpaperscissors.jpg);
+    background-repeat: no-repeat;
+    background-position: center 50px;
 	}
 
 
@@ -10,17 +12,19 @@ font-family:Helvetica; color: 008563; text-shadow: 2px 2px 1F4C2E;
 
 
 
-button {
+#rock {
+    font-size: 40px;
+    border-radius: 25px;
     background: 47B26B;
     position: relative;
-    -webkit-animation: myfirst 10s; /* Chrome, Safari, Opera */
-    animation: myfirst 10s;
+    -webkit-animation: rock 10s; /* Chrome, Safari, Opera */
+    animation: rock 10s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
 }
 
 /* Chrome, Safari, Opera */
-@-webkit-keyframes myfirst {
+@-webkit-keyframes rock {
     0%   {background:47B26B; left:0px; top:0px;}
     10%  {background:33CCFF; left:200px; top:10px;}
     20%  {background:33CCFF; left:400px; top:0px;}
@@ -34,5 +38,54 @@ button {
     100% {background:47B26B; left:0px; top:0px;}
 }
 
+#paper {
+    font-size: 40px;
+    border-radius: 25px;
+    background: 47B26B;
+    position: relative;
+    -webkit-animation: paper 10s; /* Chrome, Safari, Opera */
+    animation: paper 10s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
 
-.outcome {text-align: center; margin: 100px auto;}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes paper {
+    0%   {background:47B26B; left:0px; top:0px;}
+    7%  {background:33CCFF; left:250px; top:-40px;}
+    25%  {background:33CCFF; left:450px; top:10px;}
+    27%  {background:E65C5C; left:250px; top:300px;}
+    35%  {background:E65C5C; left:180px; top:700px;}
+    55%  {background:E6E65C; left:50px; top:500px;}
+    60%  {background:E6E65C; left:-450px; top:700px;}
+    70%  {background:9933FF; left:-300px; top:300px;}
+    80%  {background:9933FF; left:-350px; top:10px;}
+    90% {background:47B26B; left:-300px; top:-10px;}
+    100% {background:47B26B; left:0px; top:0px;}
+}
+
+#scissors {
+    font-size: 40px;
+    border-radius: 25px;
+    background: 47B26B;
+    position: relative;
+    -webkit-animation: scissors 10s; /* Chrome, Safari, Opera */
+    animation: scissors 10s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes scissors {
+    0%   {background:47B26B; left:0px; top:0px;}
+    5%  {background:33CCFF; left:200px; top:10px;}
+    25%  {background:33CCFF; left:400px; top:0px;}
+    30%  {background:E65C5C; left:300px; top:400px;}
+    45%  {background:E65C5C; left:200px; top:800px;}
+    50%  {background:E6E65C; left:0px; top:700px;}
+    65%  {background:E6E65C; left:-400px; top:800px;}
+    70%  {background:9933FF; left:-420px; top:400px;}
+    85%  {background:9933FF; left:-400px; top:0px;}
+    90% {background:47B26B; left:-200px; top:-10px;}
+    100% {background:47B26B; left:0px; top:0px;}
+}

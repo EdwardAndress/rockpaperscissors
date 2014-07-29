@@ -1,5 +1,4 @@
 
-<main class=index>
 
 <% if @game.winner == "Draw" %>
  <h1> It was a draw! </h1>
@@ -39,4 +38,3 @@ Scissors: <%= session[:player].history.count("Scissors") %>
 <form action="/" method="GET">
 <button>No!</button>
 </form>
-</main>

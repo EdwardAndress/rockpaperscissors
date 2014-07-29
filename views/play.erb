@@ -1,12 +1,12 @@
-<body class=index>
+<section class="index">
 
 <h1>Let's play, <%= session[:player].name%>!</h1>
 
 <form action="/play" method="POST">
-	<button name="pick" value="Rock">Rock</button>
-	<button name="pick" value="Paper">Paper</button>
-	<button name="pick" value="Scissors">Scissors</button>
+	<button id='rock' name="pick" value="Rock">Rock</button>
+	<button id='paper' name="pick" value="Paper">Paper</button>
+	<button id='scissors' name="pick" value="Scissors">Scissors</button>
 	<input type="hidden" name="name" value=<%= session[:player].name %>>
 </form>
 
-</body>
+</section>
